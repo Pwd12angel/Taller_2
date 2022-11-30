@@ -10,10 +10,7 @@ function calcularPrecioConDescuento (precio, descuento){
     return precioConDescuento;
 }
 
-function prueba (){
-    return alert ("Hola");
 
-}
 
 function onClickButton (){
     //llamos al id del precio y el descuento 

@@ -4,26 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
     <title>Porcetnajes y descuentos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    
 </head>
 <body>
-    <h1>Porcentajes y descuentos </h1>
+   <div class="contenedroP">
+    <section class="contenedor">
+        <div class="Titulos">
+            <h1>Porcentajes y descuentos </h1>
+            
+        </div>
 
-    <section>
-        <h2>Calcula el precio a pagar de tus productos con Descuento</h2>
+        <div class="labels">
+          
 
-        <form action="">
-            <label for="InputPrice">Escribe el precio de tu produto</label>
-            <input id="InputPrice" type="numbre">
+                <div class="cam1">
+                    <label for="InputPrice">Escribe el precio de tu produto</label>
+                    <input id="InputPrice" placeholder="$" type="numbre">
+        
+                </div>
+               
+                <div class="cam2">
+                    <label for="InputDiscount">Escribe el descuento de tu producto</label>
+                <input id="InputDiscount" placeholder="%" type="number">
 
-            <label for="InputDiscount">Escribe el descuento de tu producto</label>
-            <input id="InputDiscount" type="number">
-
-            <button type="button" onclick="onClickButton()">Calcular Precio con descuento</button>
-
-          <strong>  <p id="Result"></p></strong>
-        </form>
+                </div>
+    
+                <button class="boton" type="button" onclick="onClickButton()">Calcular</button>
+    
+              <strong>  <p class="resultado" id="Result"></p></strong>
+            
+        </div>
     </section>
+   </div>
+
     <script src="./descuentos.js"></script>
 </body>
 </html>
