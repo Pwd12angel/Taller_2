@@ -1,6 +1,11 @@
-//const precioOriginal = 100;
+//Cramos un array 
+let cupones = [
+    "Cupon1",
+    "Cupon2",
+    "Cupon3"
+];
 
-//const descuento = 15;
+
 
 function calcularPrecioConDescuento (precio, descuento){
     const porcentajePrecioConDes = 100 - descuento;
@@ -25,10 +30,40 @@ function onClickButton (){
 
     const precioConDescuento = calcularPrecioConDescuento(valorPrecio,valorDesc);
 
+    //Obtenemos el valor del cupon
+    const inputCupon = document.getElementById("InputCupon");
+    const valorCupon = inputCupon.value;
+    
+   
+    var reslP = " ",reslC = "" ;
 
-    const reslP = document.getElementById("Result");
+    switch(valorCupon){
+        case cupones[0]:
+             reslP = document.getElementById("Result");
+             reslP.innerText = "El precio con descuento es: $" + precioConDescuento ;
+             
+             reslC = document.getElementById("cup");
+             reslC.innerText = "El cupon es: " + cupones[0];
 
-    reslP.innerText = "El precio con descuento es: $" + precioConDescuento;
+             break;
+        case cupones[1]:
+            reslP = document.getElementById("Result");
+            reslP.innerText = "El precio con descuento es: $" + precioConDescuento;
+            
+            reslC = document.getElementById("cup");
+            reslC.innerText = "El cupon es: " + cupones[1];
+
+            break;
+        case cupones[2]:
+            reslP = document.getElementById("Result");
+            reslP.innerText = "El precio con descuento es: $" + precioConDescuento;
+            
+            reslC = document.getElementById("cup");
+            reslC.innerText = "El cupon es: " + cupones[2];
+            break;
+    }
+
+   
 
 }
 
