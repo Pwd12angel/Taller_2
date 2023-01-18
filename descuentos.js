@@ -1,11 +1,4 @@
 //Cramos un array 
-let cupones = [
-    "Cupon1",
-    "Cupon2",
-    "Cupon3"
-];
-
-
 
 function calcularPrecioConDescuento (precio, descuento){
     const porcentajePrecioConDes = 100 - descuento;
@@ -32,38 +25,89 @@ function onClickButton (){
 
     //Obtenemos el valor del cupon
     const inputCupon = document.getElementById("InputCupon");
-    const valorCupon = inputCupon.value;
+    let valorCupon ;
+
+    valorCupon = parseInt(inputCupon.value);
     
    
-    var reslP = " ",reslC = "" ;
+    var reslP = " ",reslC = " ", reslCNuevo = " " ;
+    var precioConCupon = 0;
 
-    switch(valorCupon){
-        case cupones[0]:
-             reslP = document.getElementById("Result");
-             reslP.innerText = "El precio con descuento es: $" + precioConDescuento ;
-             
-             reslC = document.getElementById("cup");
-             reslC.innerText = "El cupon es: " + cupones[0];
+    console.log(valorCupon);
+    if (Number.isNaN(valorCupon)){
 
-             break;
-        case cupones[1]:
-            reslP = document.getElementById("Result");
-            reslP.innerText = "El precio con descuento es: $" + precioConDescuento;
-            
-            reslC = document.getElementById("cup");
-            reslC.innerText = "El cupon es: " + cupones[1];
+        console.log("No hay cupon");
+        reslP = document.getElementById("Result");
+        reslP.innerText = "El precio con descuento es: $" + precioConDescuento ;
+   
+    }else {
 
-            break;
-        case cupones[2]:
-            reslP = document.getElementById("Result");
-            reslP.innerText = "El precio con descuento es: $" + precioConDescuento;
-            
-            reslC = document.getElementById("cup");
-            reslC.innerText = "El cupon es: " + cupones[2];
-            break;
+        console.log("Si hay cupon");
+
+        switch(valorCupon){
+            case 1:
+                 reslP = document.getElementById("Result");
+                 reslP.innerText = "El precio con descuento es: $" + precioConDescuento ;
+                 
+                 reslC = document.getElementById("cup");
+                 console.log({precioConDescuento});
+
+                 precioConCupon =  calcularPrecioConDescuento(precioConDescuento,5);
+
+                 reslC.innerText = "Cupon aplicado : " + 1 +" con un 5% de descuento mas";
+
+                
+                 reslCNuevo = document.getElementById("ResultCup");
+                 
+                 reslCNuevo.innerText = "El precio nuevo es: "+precioConCupon ;
+                 break;
+            case 2:
+                reslP = document.getElementById("Result");
+                reslP.innerText = "El precio con descuento es: $" + precioConDescuento;
+                
+                reslC = document.getElementById("cup");
+                reslC.innerText = "El cupon es: " + 2;
+
+                precioConCupon =  calcularPrecioConDescuento(precioConDescuento,10);
+
+
+                reslCNuevo = document.getElementById("ResultCup");
+                 reslCNuevo.innerText = "El precio nuevo es: "+precioConCupon;
+
+                break;
+            case 3:
+                reslP = document.getElementById("Result");
+                reslP.innerText = "El precio con descuento es: $" + precioConDescuento;
+                
+                reslC = document.getElementById("cup");
+                reslC.innerText = "El cupon es: " + 3;
+
+                precioConCupon =  calcularPrecioConDescuento(precioConDescuento,20);
+
+                reslCNuevo = document.getElementById("ResultCup");
+                reslCNuevo.innerText = "El precio nuevo es: "+precioConCupon;
+
+                break;
+        }
+    
     }
 
-   
+}
 
+function disable(){
+    if(document.getElementById("check").checked == true){
+        document.getElementById("InputCupon").disabled = true;
+        let campo = document.getElementById("campCupones");
+        
+        campo.disabled = true;
+        campo.style.display = "none";
+
+    }else{
+        document.getElementById("InputCupon").disabled = false;
+        let campo = document.getElementById("campCupones");
+        campo.style.display = "grid";
+        console.log(campo);
+    }
+    
 }
 

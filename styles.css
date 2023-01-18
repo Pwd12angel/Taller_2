@@ -1,15 +1,41 @@
 *{
     margin: 0px;    
     font-family: 'Quicksand', sans-serif;
-    background-color: rgb(236, 236, 236);
+   
+}
+body{
+    background-color: rgb(10, 69, 105);
 }
 
-.contenedroP{
+.contenedoP{
     width: 100%;
-    height: 70vh;
+    height:100%;
     display: grid;
-    place-items: center;
+    place-items: center; 
+    background-color: rgb(249, 249, 249);
+   padding-top: 20px;
+   padding-bottom: 20px;
 }
+.tituloP{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(166, 166, 166);
+    max-width: 1000px;
+    height: 200px; 
+    margin-left: 10%;   
+    margin-right: 10%;
+    
+}
+.principal{
+    height: 50px;
+    width: 300px;
+    background-color: rgb(146, 124, 124);
+}
+.principal h1{
+    background-color: transparent;
+}
+
 .Titulos{
     padding: 20px;
     text-align: center;
@@ -20,28 +46,65 @@
     border: 3px solid rgb(167, 167, 167);
     padding: 10px;
     height: auto;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+   
 }
 
-.cam1{
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-}
-.cam1 input {
-    width: 50%;
-}
-
-input{
-    margin: 10px 0px 0px 0px;
-}
 .cam2{
     display: flex;
     flex-direction: column;
     padding: 10px;
+   
 }
-.cam2 input {
+.InputInfo{
     width: 50%;
+    margin: 10px 0px 0px 0px;
+    outline: 0px;
+    position: relative;
+    border: none;
+    border-bottom: solid rgb(23, 134, 154) 1px;
+
+    
 }
+
+
+.InputInfo:focus {
+    transform: translateX(0%);
+    border-bottom: solid rgb(0, 183, 234) 2px;
+    transition: all 0.5s ease;
+}
+
+.cuponesContenedor{
+   
+    display: grid;
+    /*Filas --------------------- Columnas*/ 
+    grid-template: auto auto / auto auto auto;
+    /*Un espacio entre filas*/
+    grid-row-gap:10px ;
+    /*Un espacio entre columnas*/  
+    grid-column-gap:5.5em;    
+    padding: 10px;
+    
+}
+
+.cuponesContenedor h4{
+    display: flex;
+    justify-content: center;
+}
+
+
+.validar{
+   padding: 0px 0px 10px 10px;
+}
+.InputInfo:disabled {
+    background-color: rgb(174, 174, 174);
+    transition: 0.5s;
+    
+}
+
+
 .boton{
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
@@ -59,5 +122,9 @@ input{
 }
 
 .resultado{
+    margin-top: 20px;
+}
+
+.resultadoCupon{
     margin-top: 20px;
 }
