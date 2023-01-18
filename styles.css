@@ -8,13 +8,15 @@ body{
 }
 
 .contenedoP{
-    width: 100%;
+    max-width: 1000px;
     height:100%;
     display: grid;
     place-items: center; 
     background-color: rgb(249, 249, 249);
    padding-top: 20px;
    padding-bottom: 20px;
+   margin-left: 10%;
+   margin-right: 10%;
 }
 .tituloP{
     display: flex;
